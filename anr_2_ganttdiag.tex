@@ -1,0 +1,46 @@
+\begin{ganttchart}[time slot format=isodate-yearmonth, 
+		vgrid={dotted,draw=none,draw=none}, %hgrid=true, 
+		x unit=0.35cm,									% NOTE: width for a single month
+		y unit chart = 0.6cm, bar height=0.6,
+		y unit title = 0.5cm, title height=1,
+		include title in canvas=false,
+        time slot unit=month
+	%]{2018-09}{2021-10}
+	]{2018-09}{2022-02}
+    
+	% temporal marks
+	\gantttitlecalendar[title/.style={fill=black!30,draw=black}]{year} \\
+	\gantttitlecalendar[title/.style={fill=black!20,draw=black}]{month} \\
+    
+	% horizontal bars
+ 	\ganttbarbis{WP~\ref{wp:ProjMgt}}{Projet coordination}{2018-10}{2021-07}{blue!50} \\
+    
+ 	\ganttbarbis{WP~\ref{wp:Data}}{Data retrieval}{2018-10}{2020-07}{red!50} \\
+ 	\ganttbarbis{Task~\ref{tsk:DataST}}{Some task}{2018-10}{2019-02}{red!25} \\
+ 	\ganttbarbis{Task~\ref{tsk:DataOT}}{Some other task}{2018-10}{2019-08}{red!25} \\
+ 	\ganttbarbis{Task~\ref{tsk:DataLT}}{Last task of this WP}{2019-03}{2020-07}{red!25} \\
+    
+ 	\ganttbarbis{WP~\ref{wp:Classif}}{Classification methods}{2018-10}{2020-08}{green!50} \\
+ 	\ganttbarbis{Task~\ref{tsk:ClassifFT}}{First task of this WP}{2018-10}{2020-08}{green!25} \\
+ 	\ganttbarbis{Task~\ref{tsk:ClassifAT}}{Another task}{2019-03}{2019-10}{green!25} \\
+ 	\ganttbarbis{Task~\ref{tsk:ClassifYT}}{Yet another task}{2019-11}{2020-07}{green!25} \\
+    
+ 	\ganttbarbis{WP~\ref{wp:Exp}}{Experimental validation}{2019-03}{2021-08}{purple!50} \\
+ 	\ganttbarbis{Task~\ref{tsk:ExpYT}}{Yet another task}{2019-03}{2020-12}{purple!25} \\
+ 	\ganttbarbis{Task~\ref{tsk:ExpTT}}{Just two tasks in this WP}{2021-01}{2021-09}{purple!25} \\
+    
+	% items
+ 	\ganttmilestone{Items}{2018-10}
+ 	\ganttmilestone{}{2019-01}
+ 	\ganttmilestone{}{2019-07}
+ 	\ganttmilestone{}{2020-01}
+ 	\ganttmilestone{}{2020-04}
+ 	\ganttmilestone{}{2020-07}
+ 	\ganttmilestone{}{2020-10}
+	\ganttmilestone{}{2021-07}
+ 	\ganttmilestone{}{2021-09}
+    
+	% vertical lines
+% 	\drawverticalline{2019-11}{xxxxx}
+% 	\drawverticalline{2020-01}{yyyyy}
+\end{ganttchart}

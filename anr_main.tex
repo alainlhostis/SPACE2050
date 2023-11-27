@@ -1,0 +1,302 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Unofficial class for ANR Project proposals
+%%
+%% v1.2.4 - 21/02/2023: updated content to match the 2023 version of the ANR template, thanks to Vincent Colotte.
+%% v1.2.3 - 08/09/2021: adjusted footer and header, thanks to Adel Noureddine.
+%% v1.2.2 - 21/11/2020: adjusted to allow lists in notes, thanks to Christophe Gravier.
+%% v1.2.1 - 25/02/2020: modification to fit the changes in packages pgfgantt, thanks to Nicolas Marchand.
+%% v1.2   - 02/03/2019: minor adjustments to match the 2019 version of the template.
+%% v1.1   - 12/04/2018: minor adjustments in the class file.
+%% v1     - 07/03/2018: first draft.
+%%
+%% Vincent Labatut 2018-23 
+%% <vincent.labatut@univ-avignon.fr>
+%% https://www.overleaf.com/latex/templates/unofficial-template-for-anr-proposals/yqgzsxkzrqkw
+%% Creative Commons CC BY 4.0
+%%
+%% Please tell me if you find any error.
+%% And if you use this model for your ANR project: 
+%% I only take 8% of your accepted budget ;)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{anr/proposal}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Search for "NOTE:" to get to the parameters worth adjusting to your needs
+% There are some such NOTEs in the anr/proposal.cls file, too.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% project details
+\acronym				        % acronym of the project
+	{\textsc{SPACE2050}}
+\committee				        % scientific evaluation committee (CES)
+	{PEPR Ville Durable et Bâtiment Innovant}
+\instrument{PEPR VDBI}		        % funding instrument
+\acyear{2023}			        % academic year of the call
+\title                          % full title of the project
+    {\myacronym{}: Pour une approche Systémique de la Planification bAs Carbone des tErritoires}
+\subtitle                           % subtitle of the project (optional)
+    {Scénarios, actions et évaluations}
+\investigator{Alain L'Hostis} % principal investigator
+\duration{36 months}            % duration of the project
+\funding{3 M\euro}          % requested funding
+% NOTE: all the above fields must be filled (except the subtitle which is optional)
+% NOTE: use command \myxxxxx{} to mention information xxxx in the text, e.g. \myacronym{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% bibliography
+\addbibresource{anr_biblio.bib}
+\addbibresource{zotero_ALH.bib}
+% NOTE: look for "bibliographic settings" in the class if you want to 
+% change the formatting of the bibliography (e.g. switch to author-year instead of numeric)
+
+
+% make bold names of authors of the consortium
+\ExecuteBibliographyOptions{maxnames=99,giveninits}
+\DeclareNameAlias{default}{family-given/given-family}
+\forcsvlist{\listadd\boldnames}
+  {{Kilani, Moez}, {Kilani, M.}, {Kilani, M\bibinitperiod}}
+\forcsvlist{\listadd\boldnames}
+  {{Zerguini, Seghir}, {Zerguini, Z.}, {Zerguini, Z\bibinitperiod}}
+
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% partners
+\newcommand{\colUGE}[1]{\textcolor{partnercol1}{#1}}
+\newcommand{\colEFF}[1]{\textcolor{partnercol2}{#1}}
+\newcommand{\colINR}[1]{\textcolor{partnercol3}{#1}}
+\newcommand{\colUT}[1]{\textcolor{partnercol4}{#1}}
+\newcommand{\colTUT}[1]{\textcolor{partnercol5}{#1}}
+% NOTE: colors go from partnercol1 to partnercol8
+% if you need more colors, add them in the class file, look for "color settings"
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% work packages
+% NOTE: WP are defined using the \wpdef{label}{Title} macro. 
+% NOTE: Cross-referencing works as usual, with the \ref{label} macro.
+% NOTE: WPs are numbered from 0. If you want to start from 1, look for "work packages and tasks" 
+% in the class file (anr.cls), and read the note there.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% tasks
+% NOTE: tasks are defined using the \tdef{label}{Title} macro. 
+% NOTE: Cross-referencing works as usual, with the \ref{label} macro.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% writer comments
+\usepackage%[disable]	% uncomment to hide all the notes
+	{todonotes} 
+\newcommand{\noteANR}[1]{\todo[color=gray!100, author=\textbf{ANR}, inline, caption={}]{#1}}
+\newcommand{\notePEPR}[1]{\todo[color=gray!40, author=\textbf{PEPR}, inline, caption={}]{#1}}
+\newcommand{\noteSM}[1]{\todo[color=red!40, author=\textbf{Stéphanie}, inline, caption={}]{#1}}
+\newcommand{\noteJZ}[1]{\todo[color=green!40, author=\textbf{Jing}, inline, caption={}]{#1}}
+\newcommand{\noteRM}[1]{\todo[color=blue!40, author=\textbf{Richard}, inline, caption={}]{#1}}
+% NOTE: you can setup other writers by pasting and editing the above lines
+
+
+\begin{document}
+\maketitle
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% consortium
+\begin{center}
+	\textbf{Consortium:} 
+	\colUGE{LVMT (Univ Eiffel)}, 
+	\colEFF{Efficacity},
+	\colINR{LMD (INR)},
+	\colUT{CGCS (UT)},
+	\colTUT{FI (TUT)}
+\end{center}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% general comments
+
+\notePEPR{\textit{Le dossier ci-dessous }\textit{\textbf{doit être de 20 pages maximums pour les sections de 1 à 8. }}
+
+\textit{\textbf{La section Annexes (Annexe Partenariats et Annexe Publications) ne doit pas dépasser les 10 pages. }}
+
+\textit{\textbf{Le dossier doit être rédigé en }}\textit{\textbf{police Arial 11pt, interligne 1,15, }}\textit{\textbf{de préférence en anglais}}\textit{\textbf{. }}\textit{Les informations précises demandées au-dessus de ce cadre ne sont pas décomptées dans le nombre de pages.} \textit{Toutes les consignes écrites en violet devront être éliminées par les rédacteurs du projet.}
+}
+
+
+\begin{spacing}{0.1}
+\tableofcontents
+\end{spacing}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% project summary
+\input{anr_0_summary.tex}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Context and objectives
+\input{anr_1_context.tex}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{anr_2_organization.tex}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{anr_3_impact.tex}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Cited references}
+
+\notePEPR{Lister les références bibliographiques citées dans le document scientifique du projet (souligner les noms des partenaires du consortium lorsqu’ils sont auteurs) (Quatre pages maximum).}
+
+\textbf{Note}: names of authors who belong to the consortium are displayed in \textbf{bold}.
+
+% derived from https://tex.stackexchange.com/questions/73136/make-specific-author-bold-using-biblatex/73246#73246
+\renewcommand*{\boldnames}{}
+%\forcsvlist{\listadd\boldnames}
+%  {{Herrmann, Wolfgang~A.}, {Herrmann, W.~A.}, {Herrmann, Wolfgang\bibnamedelima A.},
+%   {Herrmann, W\bibinitperiod\bibinitdelim A\bibinitperiod}}
+\forcsvlist{\listadd\boldnames}
+  {{Kilani, Moez}, {Kilani, M.}, {Kilani, M\bibinitperiod}}
+\forcsvlist{\listadd\boldnames}
+  {{Zerguini, Seghir}, {Zerguini, S.}, {Zerguini, S\bibinitperiod}}
+\forcsvlist{\listadd\boldnames}
+  {{L'Hostis, Alain}, {L'Hostis, A.}, {L'Hostis, A\bibinitperiod}}
+\forcsvlist{\listadd\boldnames}
+  {{Liu, Liu}, {Liu, L.}, {Liu, L\bibinitperiod}}
+  \forcsvlist{\listadd\boldnames}
+  {{Manout, Ouassim}, {Manout, O.}, {Manout, O\bibinitperiod}}
+
+
+{	\setstretch{0.8}							% decreases the space between lines
+	\phantomsection
+	\addcontentsline{toc}{section}{References}	% add bibliography to toc
+	\printbibliography[heading=none]							% add the references
+}
+
+\section{Linked projects}
+\notePEPR{Lister et décrire les projets en cours de financement, liés au projet présenté. La description de chaque projet doit résumer l’objectif final, l’état de l’art, les grandes étapes de réalisation avec les principales techniques utilisées et la place des différentes partenaires dans leur réalisation (Deux pages maximum). }
+
+\section{Project leader CV}
+\notePEPR{CV du responsable du projet : il est vivement conseillé aux candidats de rédiger leur CV en anglais et de ne pas utiliser d'abréviations car les évaluations peuvent être effectuées par des non francophones.}
+
+
+\appendix{}
+
+\section{Stakeholders Appendix}
+\notePEPR{La section ci-dessous, constitué de l’Annexe Partenariats et de l’Annexe Publications, ne doit pas dépasser les 10 pages. }
+\notePEPR{Dans cette annexe, 
+    • préciser pour chacun des partenaires de type partie prenante, sa contribution, son apport autour de ses métiers et ses pratiques }
+\notePEPR{précisez pour les laboratoires non financés (Européens, Internationaux), leur contribution et leur apport dans le projet ainsi que leur rôle dans la réalisation des objectifs}
+\notePEPR{présenter les terrains envisagés afin d’ancrer les recherches proposées sur un territoire}
+
+
+
+
+{	\vspace{0.2cm}
+	\centering
+    \small
+    \begin{table}
+        \begin{tabular}{p{0.15\textwidth} p{0.20\textwidth} p{0.45\linewidth} } 
+        \hline 
+        \rowcolor{headcolor!20}
+        \textbf{Métiers et pratiques / Domain and practices}& \textbf{Noms – Prénoms / Name – First name}& \textbf{Partie-Prenante /  Stakeholders}\\ \hline 
+             &  & \\ \hline 
+             &  & \\ \hline 
+             &  & \\ \hline 
+             &  & \\ \hline
+        \end{tabular}
+        \caption{Domain and practice}
+        \label{tab:my_label}
+    \end{table}
+}    
+{	\vspace{0.2cm}
+	\centering
+    \small
+    \begin{table}
+        \centering
+        \begin{tabular}{p{0.15\textwidth} p{0.25\textwidth} p{0.15\linewidth} p{0.20\linewidth}  p{0.15\textwidth}  p{0.05\textwidth}}
+        \hline 
+        \rowcolor{headcolor!20}
+        \textbf{Discipline / subject}& \textbf{Noms – Prénoms- Orcid1 des personnes/ Name – First name - Orcid}& \textbf{Laboratoire/ Laboratory}& \textbf{Etablissement de rattachement des personnes/ Person's home establishment}& \textbf{Pays/ Country} &\\ \hline 
+              &&  &  &\\ \hline 
+              &&  &  &\\ \hline 
+              &&  &  &\\ \hline 
+              &&  &  &\\ \hline
+        \end{tabular}
+        \caption{Not funded laboratories / Laboratoires non financés}
+        \label{tab:my_label}
+    \end{table}
+}    
+
+
+{	\vspace{0.2cm}
+	\centering
+    \small
+    \begin{table}
+        \centering
+        \begin{tabular}{p{0.15\textwidth} p{0.20\textwidth} p{0.45\linewidth} p{0.15\linewidth} }
+		\hline
+        \rowcolor{headcolor!20}
+	    \textbf{Terrain/ Site}& \textbf{Noms – Prénoms- du porteur territorial/ Territorial carrier Name – First name}& \textbf{Expérimentation envisagée ou déjà lancée/ Experiments planned or already launched}& \textbf{Inscrit dans un dispositif aidé par la Banque des Territoires (DVD, TID…)/ Part of a scheme supported by the Banque des Territoires}\\	\hline
+        & & & \\ \hline
+		& & & \\ \hline
+		& & & \\ \hline
+	\end{tabular}
+    \caption{Envisaged territories / Terrains envisagés}
+    \label{tab:my_label}
+    \end{table}
+
+}
+
+\section{Publications Appendix}
+\notePEPR{Dans cette annexe, chaque entité indiquera la liste de ses publications des 3 dernières années (2021-2023). 
+Cette liste peut intégrer des publications à destination des utilisateurs des résultats de la recherche (presse professionnelle, etc…) en les distinguant des publications dans des revues scientifiques à comité de lecture. 
+La liste peut aussi intégrer des pre-prints non encore publiés dans des journaux scientifiques avec comité de lecture, en particulier pour le référencement de données préliminaires. Si disponibles, indiquez les liens open-access des références pour améliorer leur accessibilité aux évaluateurs. Surligner les noms des auteurs/co-auteurs participant au projet.}
+
+\end{document}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TODO
+% garder les sections* dans les liens du PDF
